@@ -14,9 +14,8 @@ void printNums(int binaryCarry[], int i) {
     cout << " ";
 }
 
-// Split into nums
+// Separate each digit and place into array
 vector<int> splitNum(int n) {
-    // Separate each digit and place into array
     vector<int> arr;
     while (n > 0) {
         int digit = n%10;
@@ -31,8 +30,7 @@ vector<int> splitNum(int n) {
 void integerToBinary(int n) {
     vector<int> arr = splitNum(n);
     for(auto& j: arr) {
-        int binaryCarry[32];
-        int i = 0;
+        int binaryCarry[32], i = 0;
         while (j > 0) {
             binaryCarry[i] = j % 2;
             j = j / 2;
@@ -45,32 +43,15 @@ void integerToBinary(int n) {
 
 // Tests integerToBinary function
 int main() {
-    int testZero = 1;
-    integerToBinary(testZero);
-    
-    int testOne = 5;
-    integerToBinary(testOne);
-    
-    int testTwo = 12;
-    integerToBinary(testTwo);
-    
-    int testThree = 35;
-    integerToBinary(testThree);
-    
-    int testFour = 117;
-    integerToBinary(testFour);
-    
-    int testFive = 2;
-    integerToBinary(testFive);
-    
-    int testSix = 21967;
-    integerToBinary(testSix);
-    
-    int testSeven = 123456;
-    integerToBinary(testSeven);
-    
-    int testEight = 9185482;
-    integerToBinary(testEight);
+    integerToBinary(1);
+    integerToBinary(5);
+    integerToBinary(12);
+    integerToBinary(35);
+    integerToBinary(117);
+    integerToBinary(2);
+    integerToBinary(21967);
+    integerToBinary(123456);
+    integerToBinary(9185482);
     
     system("pause");
     return 0;
